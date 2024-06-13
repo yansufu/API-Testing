@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>DELETE post</name>
+   <name>DELETE comment</name>
    <tag></tag>
    <elementGuidId>78de5a7e-e4ba-4da5-9565-c7252e221cad</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
    <restRequestMethod>DELETE</restRequestMethod>
-   <restUrl>https://jsonplaceholder.typicode.com/posts/1</restUrl>
+   <restUrl>https://jsonplaceholder.typicode.com/comments/1</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

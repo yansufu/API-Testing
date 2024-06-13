@@ -7,7 +7,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'2'</initValue>
-      <name>USERID</name>
+      <name>COMMENTID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
