@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>POST comment</name>
+   <name>PUT update a comment</name>
    <tag></tag>
-   <elementGuidId>f022c172-799b-4d71-9f1d-8edeaf8fa14c</elementGuidId>
+   <elementGuidId>54c42ccc-04c8-48c8-a3e6-6aa04befa3b8</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
@@ -12,8 +12,8 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;title\&quot;: \&quot;foo\&quot;,\n  \&quot;body\&quot;: \&quot;bar\&quot;,\n  \&quot;userId\&quot;: 1\n}\n&quot;,
-  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;id\&quot;: 1,\n    \&quot;title\&quot;: \&quot;foo\&quot;,\n    \&quot;body\&quot;: \&quot;bar\&quot;,\n    \&quot;userId\&quot;: 1\n}\n&quot;,
+  &quot;contentType&quot;: &quot;text/plain&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
    <httpBodyType>text</httpBodyType>
@@ -22,15 +22,15 @@
       <matchCondition>equals</matchCondition>
       <name>Content-Type</name>
       <type>Main</type>
-      <value>application/json</value>
-      <webElementGuid>33c08552-b26e-4a28-a13f-9db3241f9127</webElementGuid>
+      <value>text/plain</value>
+      <webElementGuid>ccde0fe5-0274-4b06-afd8-0885e36cc674</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.4.0</katalonVersion>
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
-   <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://jsonplaceholder.typicode.com/comments</restUrl>
+   <restRequestMethod>PUT</restRequestMethod>
+   <restUrl>https://jsonplaceholder.typicode.com/comments/${commentid}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -39,6 +39,13 @@
    <soapServiceFunction></soapServiceFunction>
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b0cf753e-b989-4f98-b04f-84af9a609539</id>
+      <masked>false</masked>
+      <name>commentid</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -52,9 +59,6 @@ import internal.GlobalVariable as GlobalVariable
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
-
-WS.verifyElementPropertyValue(response, 'title', 'foo')
-WS.verifyElementPropertyValue(response, 'body', 'bar')
-WS.verifyElementPropertyValue(response, 'userId', 1)</verificationScript>
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
